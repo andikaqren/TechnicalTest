@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.facebook.shimmer.ShimmerFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/shimmer_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/ConstraintLayout.HomeProduct">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mainCard"
+            style="@style/CardView.HomeProduct"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/product_rated"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/movies_mini_poster"
+                    style="@style/ImageView.HomePoster"
+                    android:contentDescription="@string/image_cover" />
+
+                <TextView
+                    android:id="@+id/product_movies_title"
+                    style="@style/TextView.HomeDetailProduct"
+                    android:ellipsize="marquee"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <RatingBar
+            android:id="@+id/product_rated"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/RatingBar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/mainCard"
+            app:layout_constraintStart_toStartOf="@id/mainCard"
+            app:layout_constraintTop_toBottomOf="@id/mainCard" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.facebook.shimmer.ShimmerFrameLayout>

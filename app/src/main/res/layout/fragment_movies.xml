@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/ll_vp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/home_vp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_200sdp"
+            android:layout_marginBottom="@dimen/mini_medium_margin"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:visibility="visible"
+
+
+            />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/dummy_vp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_200sdp"
+            android:layout_marginBottom="@dimen/mini_medium_margin"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:visibility="visible"
+
+
+            />
+
+    </RelativeLayout>
+
+
+    <include
+        android:id="@+id/container"
+        layout="@layout/home"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_vp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
